@@ -1,30 +1,11 @@
 import { __ } from "@wordpress/i18n";
-
-export default function Save({ attributes }) {
+import { useBlockProps } from "@wordpress/block-editor";
+export default function Save(props) {
 	return (
 		<>
-			<div>
-				<div>
-					{attributes.overview.map((item, index) => {
-						return (
-							<div
-								key={index}
-								style={{
-									marginRight:
-										index !== attributes.overview.length - 1 ? "32px" : "0",
-								}}
-								className="overview"
-							>
-								<div>
-									{item.icon}
-									<div>
-										<div>{item.count}</div>
-										<div>{item.name}</div>
-									</div>
-								</div>
-							</div>
-						);
-					})}
+			<div {...useBlockProps.save()}>
+				<div className="ir-overview-page">
+					
 				</div>
 			</div>
 		</>

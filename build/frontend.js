@@ -17673,480 +17673,6 @@ var suppressOthers = function (originalTarget, parentNode, markerName) {
 
 /***/ }),
 
-/***/ "./src/edit.js":
-/*!*********************!*\
-  !*** ./src/edit.js ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Edit)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _frontend_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./frontend.js */ "./src/frontend.js");
-
-
-
-
-
-function Edit(props) {
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_frontend_js__WEBPACK_IMPORTED_MODULE_4__["default"], null));
-}
-
-/***/ }),
-
-/***/ "./src/frontend.js":
-/*!*************************!*\
-  !*** ./src/frontend.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Overview)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Flex/Flex.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
-/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.js");
-/* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apexcharts */ "./node_modules/apexcharts/dist/apexcharts.common.js");
-/* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(apexcharts__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-
-function Overview() {
-  const chartRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
-  const circleChartRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
-    if (chartRef.current) {
-      const options = {
-        chart: {
-          type: "area"
-        },
-        stroke: {
-          curve: "straight"
-        },
-        series: [{
-          name: "Earnings",
-          data: [25, 51, 35, 50, 60, 75, 95]
-        }],
-        xaxis: {
-          categories: [10, 20, 30, 40, 50, 60, 70],
-          title: {
-            text: "Days"
-          }
-        },
-        yaxis: {
-          labels: {
-            formatter: value => `$${value}`
-          },
-          categories: [0, 25, 50, 75, 100]
-        }
-      };
-      const chart = new (apexcharts__WEBPACK_IMPORTED_MODULE_1___default())(chartRef.current, options);
-      chart.render();
-    }
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
-    if (circleChartRef.current) {
-      const options = {
-        chart: {
-          height: 390,
-          type: "radialBar"
-        },
-        series: [76, 67, 61],
-        colors: ["#024368", "#0583D2", "#4FD6F7"],
-        labels: ["Complted", "In Progress", "Not Started"],
-        plotOptions: {
-          radialBar: {
-            offsetY: 0,
-            startAngle: 0,
-            endAngle: 270,
-            hollow: {
-              margin: 5,
-              size: "50%",
-              background: "transparent",
-              image: undefined
-            },
-            dataLabels: {
-              name: {
-                show: false
-              },
-              value: {
-                show: false
-              }
-            }
-          }
-        },
-        legend: {
-          show: true,
-          floating: true,
-          fontSize: "16px",
-          position: "left",
-          offsetX: 35,
-          offsetY: 20,
-          labels: {
-            useSeriesColors: true
-          },
-          markers: {
-            size: 0
-          },
-          formatter: function (seriesName, opts) {
-            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
-          },
-          itemMargin: {
-            vertical: 3
-          }
-        },
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            legend: {
-              show: false
-            }
-          }
-        }]
-      };
-      const chart = new (apexcharts__WEBPACK_IMPORTED_MODULE_1___default())(circleChartRef.current, options);
-      chart.render();
-    }
-  }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "space-between",
-    align: "flex-start",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      marginRight: "32px"
-    },
-    className: "overview"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "center"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    size: 50,
-    style: {
-      marginRight: "16px",
-      color: "blue"
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "flex-start",
-    direction: "column"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "24px"
-  }, "10"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "dimmed",
-    size: "14px",
-    fw: 400
-  }, "Course")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      marginRight: "32px"
-    },
-    className: "overview"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "center"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    size: 50,
-    style: {
-      marginRight: "16px",
-      color: "blue"
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "flex-start",
-    direction: "column"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "24px"
-  }, "56"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "dimmed",
-    size: "14px",
-    fw: 400
-  }, "Students")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      marginRight: "32px"
-    },
-    className: "overview"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "center"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    size: 50,
-    style: {
-      marginRight: "16px",
-      color: "blue"
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "flex-start",
-    direction: "column"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "24px"
-  }, "20"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "dimmed",
-    size: "14px",
-    fw: 400
-  }, "Submissions")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "overview"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "center"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    size: 50,
-    style: {
-      marginRight: "16px",
-      color: "blue"
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    align: "flex-start",
-    direction: "column"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "24px"
-  }, "53"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "dimmed",
-    size: "14px",
-    fw: 400
-  }, "Quiz Attempts"))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "space-between",
-    align: "flex-start",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      marginRight: "32px"
-    },
-    className: "block"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "20px",
-    style: {
-      marginBottom: "40px"
-    }
-  }, "Earnings"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "flex-start",
-    align: "center",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "#868E96",
-    size: "16px",
-    fw: 400,
-    style: {
-      marginRight: "10px"
-    }
-  }, "Total:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 600,
-    size: "30px",
-    c: "#2067FA",
-    style: {
-      marginRight: "25px"
-    }
-  }, "$ 1465"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "#868E96",
-    size: "16px",
-    fw: 400,
-    style: {
-      marginRight: "10px"
-    }
-  }, "Unpaid:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 600,
-    size: "30px",
-    c: "#666666"
-  }, "$ 45")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ref: chartRef,
-    className: "area-chart"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    ta: "right",
-    c: "#2067FA",
-    size: "14px"
-  }, "See More Details")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "block"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "20px",
-    style: {
-      marginBottom: "40px"
-    }
-  }, "Top Courses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    ta: "center",
-    c: "#2067FA",
-    size: "14px"
-  }, "View More"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "space-between",
-    align: "flex-start",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      marginRight: "32px"
-    },
-    className: "block"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "space-between",
-    align: "top",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "20px",
-    style: {
-      marginBottom: "40px"
-    }
-  }, "Course Report"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Select, {
-    style: {
-      fontSize: "14px"
-    },
-    data: [{
-      value: "science",
-      label: "Science"
-    }, {
-      value: "ng",
-      label: "Angular"
-    }, {
-      value: "svelte",
-      label: "Svelte"
-    }, {
-      value: "vue",
-      label: "Vue"
-    }],
-    defaultValue: "science",
-    styles: {
-      control: {
-        backgroundColor: "white",
-        // Set the background color to white
-        height: "40px" // Set the height to your desired value
-      }
-    }
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ref: circleChartRef,
-    className: "circle-chart"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    ta: "right",
-    c: "#2067FA",
-    size: "14px"
-  }, "See More Details")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "block"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    fw: 700,
-    size: "20px",
-    style: {
-      marginBottom: "40px"
-    }
-  }, "Latest Submissions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
-    justify: "space-between",
-    align: "center",
-    direction: "row"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    c: "#2067FA",
-    size: "14px"
-  }, "View all assignments"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
-    ta: "right",
-    c: "#2067FA",
-    size: "14px"
-  }, "View All Essays")))));
-}
-document.addEventListener("DOMContentLoaded", function (event) {
-  let elem = document.getElementsByClassName("ir-overview-page");
-  if (elem.length > 0) {
-    ReactDOM.render(React.createElement(Overview), elem[0]);
-  }
-});
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
-  /**
-   * @see ./edit.js
-   */
-  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  /**
-   * @see ./save.js
-   */
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
-});
-
-/***/ }),
-
-/***/ "./src/save.js":
-/*!*********************!*\
-  !*** ./src/save.js ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Save)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-function Save(props) {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "ir-overview-page"
-  })));
-}
-
-/***/ }),
-
 /***/ "./node_modules/clsx/dist/clsx.m.js":
 /*!******************************************!*\
   !*** ./node_modules/clsx/dist/clsx.m.js ***!
@@ -18520,32 +18046,6 @@ exports.typeOf = typeOf;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
 }
-
-
-/***/ }),
-
-/***/ "./src/editor.scss":
-/*!*************************!*\
-  !*** ./src/editor.scss ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/style.scss":
-/*!************************!*\
-  !*** ./src/style.scss ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
 
 
 /***/ }),
@@ -20232,28 +19732,6 @@ module.exports = window["ReactDOM"];
 
 /***/ }),
 
-/***/ "@wordpress/block-editor":
-/*!*************************************!*\
-  !*** external ["wp","blockEditor"] ***!
-  \*************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!********************************!*\
-  !*** external ["wp","blocks"] ***!
-  \********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["blocks"];
-
-/***/ }),
-
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -20262,17 +19740,6 @@ module.exports = window["wp"]["blocks"];
 
 "use strict";
 module.exports = window["wp"]["element"];
-
-/***/ }),
-
-/***/ "@wordpress/i18n":
-/*!******************************!*\
-  !*** external ["wp","i18n"] ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
@@ -23191,17 +22658,6 @@ function combine (array, callback) {
 }
 
 
-/***/ }),
-
-/***/ "./src/block.json":
-/*!************************!*\
-  !*** ./src/block.json ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/learndash-overview","version":"0.1.0","title":"Learndash Overview","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","supports":{"html":false},"attributes":{"overview":{"type":"array","default":[{"name":"Course","count":"10","icon":"IconCertificate"},{"name":"Students","count":"56","icon":"IconSchool"},{"name":"Submissions","count":"20","icon":"IconSchool"},{"name":"Quiz Attempts","count":"53","icon":"Icon123"}]}},"textdomain":"learndash-overview","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","script":"file:./frontend.js"}');
-
 /***/ })
 
 /******/ 	});
@@ -23230,42 +22686,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -23318,68 +22739,366 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"index": 0,
-/******/ 			"./style-index": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunklearndash_overview"] = globalThis["webpackChunklearndash_overview"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/index.js")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!*************************!*\
+  !*** ./src/frontend.js ***!
+  \*************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Overview)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Flex/Flex.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
+/* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.js");
+/* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apexcharts */ "./node_modules/apexcharts/dist/apexcharts.common.js");
+/* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(apexcharts__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+
+function Overview() {
+  const chartRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  const circleChartRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    if (chartRef.current) {
+      const options = {
+        chart: {
+          type: "area"
+        },
+        stroke: {
+          curve: "straight"
+        },
+        series: [{
+          name: "Earnings",
+          data: [25, 51, 35, 50, 60, 75, 95]
+        }],
+        xaxis: {
+          categories: [10, 20, 30, 40, 50, 60, 70],
+          title: {
+            text: "Days"
+          }
+        },
+        yaxis: {
+          labels: {
+            formatter: value => `$${value}`
+          },
+          categories: [0, 25, 50, 75, 100]
+        }
+      };
+      const chart = new (apexcharts__WEBPACK_IMPORTED_MODULE_1___default())(chartRef.current, options);
+      chart.render();
+    }
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    if (circleChartRef.current) {
+      const options = {
+        chart: {
+          height: 390,
+          type: "radialBar"
+        },
+        series: [76, 67, 61],
+        colors: ["#024368", "#0583D2", "#4FD6F7"],
+        labels: ["Complted", "In Progress", "Not Started"],
+        plotOptions: {
+          radialBar: {
+            offsetY: 0,
+            startAngle: 0,
+            endAngle: 270,
+            hollow: {
+              margin: 5,
+              size: "50%",
+              background: "transparent",
+              image: undefined
+            },
+            dataLabels: {
+              name: {
+                show: false
+              },
+              value: {
+                show: false
+              }
+            }
+          }
+        },
+        legend: {
+          show: true,
+          floating: true,
+          fontSize: "16px",
+          position: "left",
+          offsetX: 35,
+          offsetY: 20,
+          labels: {
+            useSeriesColors: true
+          },
+          markers: {
+            size: 0
+          },
+          formatter: function (seriesName, opts) {
+            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+          },
+          itemMargin: {
+            vertical: 3
+          }
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            legend: {
+              show: false
+            }
+          }
+        }]
+      };
+      const chart = new (apexcharts__WEBPACK_IMPORTED_MODULE_1___default())(circleChartRef.current, options);
+      chart.render();
+    }
+  }, []);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "flex-start",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginRight: "32px"
+    },
+    className: "overview"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    size: 50,
+    style: {
+      marginRight: "16px",
+      color: "blue"
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "flex-start",
+    direction: "column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "24px"
+  }, "10"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "dimmed",
+    size: "14px",
+    fw: 400
+  }, "Course")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginRight: "32px"
+    },
+    className: "overview"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    size: 50,
+    style: {
+      marginRight: "16px",
+      color: "blue"
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "flex-start",
+    direction: "column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "24px"
+  }, "56"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "dimmed",
+    size: "14px",
+    fw: 400
+  }, "Students")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginRight: "32px"
+    },
+    className: "overview"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    size: 50,
+    style: {
+      marginRight: "16px",
+      color: "blue"
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "flex-start",
+    direction: "column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "24px"
+  }, "20"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "dimmed",
+    size: "14px",
+    fw: 400
+  }, "Submissions")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "overview"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    size: 50,
+    style: {
+      marginRight: "16px",
+      color: "blue"
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    align: "flex-start",
+    direction: "column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "24px"
+  }, "53"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "dimmed",
+    size: "14px",
+    fw: 400
+  }, "Quiz Attempts"))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "flex-start",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginRight: "32px"
+    },
+    className: "block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "20px",
+    style: {
+      marginBottom: "40px"
+    }
+  }, "Earnings"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "flex-start",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "#868E96",
+    size: "16px",
+    fw: 400,
+    style: {
+      marginRight: "10px"
+    }
+  }, "Total:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "30px",
+    c: "#2067FA",
+    style: {
+      marginRight: "25px"
+    }
+  }, "$ 1465"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "#868E96",
+    size: "16px",
+    fw: 400,
+    style: {
+      marginRight: "10px"
+    }
+  }, "Unpaid:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "30px",
+    c: "#666666"
+  }, "$ 45")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ref: chartRef,
+    className: "area-chart"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    ta: "right",
+    c: "#2067FA",
+    size: "14px"
+  }, "See More Details")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "20px",
+    style: {
+      marginBottom: "40px"
+    }
+  }, "Top Courses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    ta: "center",
+    c: "#2067FA",
+    size: "14px"
+  }, "View More"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "flex-start",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginRight: "32px"
+    },
+    className: "block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "top",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "20px",
+    style: {
+      marginBottom: "40px"
+    }
+  }, "Course Report"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Select, {
+    style: {
+      fontSize: "14px"
+    },
+    data: [{
+      value: "science",
+      label: "Science"
+    }, {
+      value: "ng",
+      label: "Angular"
+    }, {
+      value: "svelte",
+      label: "Svelte"
+    }, {
+      value: "vue",
+      label: "Vue"
+    }],
+    defaultValue: "science",
+    styles: {
+      control: {
+        backgroundColor: "white",
+        // Set the background color to white
+        height: "40px" // Set the height to your desired value
+      }
+    }
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ref: circleChartRef,
+    className: "circle-chart"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    ta: "right",
+    c: "#2067FA",
+    size: "14px"
+  }, "See More Details")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 700,
+    size: "20px",
+    style: {
+      marginBottom: "40px"
+    }
+  }, "Latest Submissions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    c: "#2067FA",
+    size: "14px"
+  }, "View all assignments"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    ta: "right",
+    c: "#2067FA",
+    size: "14px"
+  }, "View All Essays")))));
+}
+document.addEventListener("DOMContentLoaded", function (event) {
+  let elem = document.getElementsByClassName("ir-overview-page");
+  if (elem.length > 0) {
+    ReactDOM.render(React.createElement(Overview), elem[0]);
+  }
+});
+})();
+
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=frontend.js.map

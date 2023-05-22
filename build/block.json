@@ -40,5 +40,6 @@
   "textdomain": "learndash-overview",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "script": "file:./frontend.js"
 }
