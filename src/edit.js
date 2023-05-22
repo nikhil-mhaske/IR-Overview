@@ -1,41 +1,49 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import { __ } from "@wordpress/i18n";
+import { IconCertificate, IconSchool, Icon123 } from "@tabler/icons-react";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+import { Flex, Text } from "@mantine/core";
+import { useBlockProps } from "@wordpress/block-editor";
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+import "./editor.scss";
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
-export default function Edit() {
+// Map the icon names to their respective components
+const iconComponents = {
+    IconCertificate,
+    IconSchool,Icon123
+};
+
+export default function Edit(props) {
+	const blockProps = useBlockProps();
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Learndash Overview – hello from the editor!',
-				'learndash-overview'
-			) }
-		</p>
+		<div {...blockProps}>
+			<Flex justify="space-between" align="flex-start" direction="row">
+				{props.attributes.overview.map((item, index) => {
+					const IconComponent = iconComponents[item.icon];
+
+					return (
+						<div
+							key={index}
+							style={{
+								marginRight:
+									index !== props.attributes.overview.length - 1 ? "32px" : "0",
+							}}
+							className="overview"
+						>
+							<Flex align="center">
+								<IconComponent size={50} style={{ marginRight: "16px", color: "blue" }} />
+								<Flex align="flex-start" direction="column">
+									<Text fw={700} size="24px">
+										{item.count}
+									</Text>
+									<Text c="dimmed" size="14px" weight={400}>
+										{item.name}
+									</Text>
+								</Flex>
+							</Flex>
+						</div>
+					);
+				})}
+			</Flex>
+		</div>
 	);
 }

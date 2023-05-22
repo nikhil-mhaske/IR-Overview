@@ -10,6 +10,37 @@
 	"supports": {
 		"html": false
 	},
+
+	"attributes": {
+		"overview": {
+		  "type": "array",
+		  "default": [
+			{
+			  "name": "Course",
+			  "count": "10",
+			  "icon": "IconCertificate"
+			},
+			{
+			  "name": "Students",
+			  "count": "56",
+			  "icon": "IconSchool"
+			},
+			{
+			  "name": "Submissions",
+			  "count": "20",
+			  "icon": "IconSchool"
+			},
+			{
+			  "name": "Quiz Attempts",
+			  "count": "53",
+			  "icon": "Icon123"
+			}
+		  ]
+		}
+	  },
+	
+
+
 	"textdomain": "learndash-overview",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
