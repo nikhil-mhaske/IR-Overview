@@ -7507,6 +7507,752 @@ FocusTrap.displayName = "@mantine/core/FocusTrap";
 
 /***/ }),
 
+/***/ "./node_modules/@mantine/core/esm/Grid/Col/Col.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Grid/Col/Col.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Col: () => (/* binding */ Col)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/MantineProvider.js");
+/* harmony import */ var _Grid_context_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Grid.context.js */ "./node_modules/@mantine/core/esm/Grid/Grid.context.js");
+/* harmony import */ var _Col_styles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Col.styles.js */ "./node_modules/@mantine/core/esm/Grid/Col/Col.styles.js");
+/* harmony import */ var _Box_Box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Box/Box.js */ "./node_modules/@mantine/core/esm/Box/Box.js");
+
+
+
+
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {};
+function isValidSpan(span) {
+  if (span === "auto" || span === "content") {
+    return true;
+  }
+  return typeof span === "number" && span > 0 && span % 1 === 0;
+}
+const Col = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
+  const _a = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.useComponentDefaultProps)("GridCol", defaultProps, props), {
+    children,
+    span,
+    offset,
+    offsetXs,
+    offsetSm,
+    offsetMd,
+    offsetLg,
+    offsetXl,
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+    order,
+    orderXs,
+    orderSm,
+    orderMd,
+    orderLg,
+    orderXl,
+    className,
+    id,
+    unstyled,
+    variant
+  } = _a, others = __objRest(_a, [
+    "children",
+    "span",
+    "offset",
+    "offsetXs",
+    "offsetSm",
+    "offsetMd",
+    "offsetLg",
+    "offsetXl",
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl",
+    "order",
+    "orderXs",
+    "orderSm",
+    "orderMd",
+    "orderLg",
+    "orderXl",
+    "className",
+    "id",
+    "unstyled",
+    "variant"
+  ]);
+  const ctx = (0,_Grid_context_js__WEBPACK_IMPORTED_MODULE_2__.useGridContext)();
+  const colSpan = span || ctx.columns;
+  const { classes, cx } = (0,_Col_styles_js__WEBPACK_IMPORTED_MODULE_3__["default"])({
+    gutter: ctx.gutter,
+    gutterXs: ctx.gutterXs,
+    gutterSm: ctx.gutterSm,
+    gutterMd: ctx.gutterMd,
+    gutterLg: ctx.gutterLg,
+    gutterXl: ctx.gutterXl,
+    offset,
+    offsetXs,
+    offsetSm,
+    offsetMd,
+    offsetLg,
+    offsetXl,
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+    order,
+    orderXs,
+    orderSm,
+    orderMd,
+    orderLg,
+    orderXl,
+    grow: ctx.grow,
+    columns: ctx.columns,
+    span: colSpan
+  }, { unstyled, name: "Grid", variant });
+  if (!isValidSpan(colSpan) || colSpan > ctx.columns) {
+    return null;
+  }
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Box_Box_js__WEBPACK_IMPORTED_MODULE_4__.Box, __spreadValues({
+    className: cx(classes.col, className),
+    ref
+  }, others), children);
+});
+Col.displayName = "@mantine/core/Col";
+
+
+//# sourceMappingURL=Col.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Grid/Col/Col.styles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Grid/Col/Col.styles.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/default-theme.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/tss/create-styles.js");
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+const getColumnFlexBasis = (colSpan, columns) => {
+  if (colSpan === "content") {
+    return "auto";
+  }
+  if (colSpan === "auto") {
+    return "0rem";
+  }
+  return colSpan ? `${100 / (columns / colSpan)}%` : void 0;
+};
+const getColumnMaxWidth = (colSpan, columns, grow) => {
+  if (grow || colSpan === "auto" || colSpan === "content") {
+    return "unset";
+  }
+  return getColumnFlexBasis(colSpan, columns);
+};
+const getColumnFlexGrow = (colSpan, grow) => {
+  if (!colSpan) {
+    return void 0;
+  }
+  return colSpan === "auto" || grow ? 1 : 0;
+};
+const getColumnOffset = (offset, columns) => offset === 0 ? 0 : offset ? `${100 / (columns / offset)}%` : void 0;
+const getGutterSize = (gutter, theme) => typeof gutter !== "undefined" ? `calc(${(0,_mantine_styles__WEBPACK_IMPORTED_MODULE_0__.getSize)({ size: gutter, sizes: theme.spacing })} / 2)` : void 0;
+function getBreakpointsStyles({
+  sizes,
+  offsets,
+  orders,
+  theme,
+  columns,
+  gutters,
+  grow
+}) {
+  return _mantine_styles__WEBPACK_IMPORTED_MODULE_1__.MANTINE_SIZES.reduce((acc, size) => {
+    acc[`@media (min-width: ${(0,_mantine_styles__WEBPACK_IMPORTED_MODULE_2__.em)(theme.breakpoints[size])})`] = {
+      order: orders[size],
+      flexBasis: getColumnFlexBasis(sizes[size], columns),
+      padding: getGutterSize(gutters[size], theme),
+      flexShrink: 0,
+      width: sizes[size] === "content" ? "auto" : void 0,
+      maxWidth: getColumnMaxWidth(sizes[size], columns, grow),
+      marginLeft: getColumnOffset(offsets[size], columns),
+      flexGrow: getColumnFlexGrow(sizes[size], grow)
+    };
+    return acc;
+  }, {});
+}
+var useStyles = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_3__.createStyles)((theme, {
+  gutter,
+  gutterXs,
+  gutterSm,
+  gutterMd,
+  gutterLg,
+  gutterXl,
+  grow,
+  offset,
+  offsetXs,
+  offsetSm,
+  offsetMd,
+  offsetLg,
+  offsetXl,
+  columns,
+  span,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  order,
+  orderXs,
+  orderSm,
+  orderMd,
+  orderLg,
+  orderXl
+}) => ({
+  col: __spreadValues({
+    boxSizing: "border-box",
+    flexGrow: getColumnFlexGrow(span, grow),
+    order,
+    padding: getGutterSize(gutter, theme),
+    marginLeft: getColumnOffset(offset, columns),
+    flexBasis: getColumnFlexBasis(span, columns),
+    flexShrink: 0,
+    width: span === "content" ? "auto" : void 0,
+    maxWidth: getColumnMaxWidth(span, columns, grow)
+  }, getBreakpointsStyles({
+    sizes: { xs, sm, md, lg, xl },
+    offsets: { xs: offsetXs, sm: offsetSm, md: offsetMd, lg: offsetLg, xl: offsetXl },
+    orders: { xs: orderXs, sm: orderSm, md: orderMd, lg: orderLg, xl: orderXl },
+    gutters: { xs: gutterXs, sm: gutterSm, md: gutterMd, lg: gutterLg, xl: gutterXl },
+    theme,
+    columns,
+    grow
+  }))
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useStyles);
+//# sourceMappingURL=Col.styles.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Grid/Grid.context.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Grid/Grid.context.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   GridProvider: () => (/* binding */ GridProvider),
+/* harmony export */   useGridContext: () => (/* binding */ useGridContext)
+/* harmony export */ });
+/* harmony import */ var _mantine_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/utils */ "./node_modules/@mantine/utils/esm/create-safe-context/create-safe-context.js");
+
+
+const [GridProvider, useGridContext] = (0,_mantine_utils__WEBPACK_IMPORTED_MODULE_0__.createSafeContext)("Grid component was not found in tree");
+
+
+//# sourceMappingURL=Grid.context.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Grid/Grid.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Grid/Grid.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Grid: () => (/* binding */ Grid)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/MantineProvider.js");
+/* harmony import */ var _Col_Col_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Col/Col.js */ "./node_modules/@mantine/core/esm/Grid/Col/Col.js");
+/* harmony import */ var _Grid_context_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Grid.context.js */ "./node_modules/@mantine/core/esm/Grid/Grid.context.js");
+/* harmony import */ var _Grid_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Grid.styles.js */ "./node_modules/@mantine/core/esm/Grid/Grid.styles.js");
+/* harmony import */ var _Box_Box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Box/Box.js */ "./node_modules/@mantine/core/esm/Box/Box.js");
+
+
+
+
+
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {
+  gutter: "md",
+  justify: "flex-start",
+  align: "stretch",
+  columns: 12
+};
+const Grid = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
+  const _a = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.useComponentDefaultProps)("Grid", defaultProps, props), {
+    gutter,
+    gutterXs,
+    gutterSm,
+    gutterMd,
+    gutterLg,
+    gutterXl,
+    children,
+    grow,
+    justify,
+    align,
+    columns,
+    className,
+    id,
+    unstyled,
+    variant
+  } = _a, others = __objRest(_a, [
+    "gutter",
+    "gutterXs",
+    "gutterSm",
+    "gutterMd",
+    "gutterLg",
+    "gutterXl",
+    "children",
+    "grow",
+    "justify",
+    "align",
+    "columns",
+    "className",
+    "id",
+    "unstyled",
+    "variant"
+  ]);
+  const { classes, cx } = (0,_Grid_styles_js__WEBPACK_IMPORTED_MODULE_2__["default"])({ gutter, justify, align, gutterXs, gutterSm, gutterMd, gutterLg, gutterXl }, { unstyled, name: "Grid", variant });
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Grid_context_js__WEBPACK_IMPORTED_MODULE_3__.GridProvider, {
+    value: { gutter, gutterXs, gutterSm, gutterMd, gutterLg, gutterXl, grow, columns }
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Box_Box_js__WEBPACK_IMPORTED_MODULE_4__.Box, __spreadValues({
+    className: cx(classes.root, className),
+    ref
+  }, others), children));
+});
+Grid.Col = _Col_Col_js__WEBPACK_IMPORTED_MODULE_5__.Col;
+Grid.displayName = "@mantine/core/Grid";
+
+
+//# sourceMappingURL=Grid.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Grid/Grid.styles.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Grid/Grid.styles.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/default-theme.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/tss/create-styles.js");
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+function getGutterStyles(gutters, theme) {
+  return _mantine_styles__WEBPACK_IMPORTED_MODULE_0__.MANTINE_SIZES.reduce((acc, size) => {
+    if (typeof gutters[size] !== "undefined") {
+      acc[`@media (min-width: ${theme.breakpoints[size]})`] = {
+        margin: `calc(-${(0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.getSize)({ size: gutters[size], sizes: theme.spacing })} / 2)`
+      };
+    }
+    return acc;
+  }, {});
+}
+var useStyles = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_2__.createStyles)((theme, { justify, align, gutter, gutterXs, gutterSm, gutterMd, gutterLg, gutterXl }) => ({
+  root: __spreadValues({
+    margin: `calc(-${(0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.getSize)({ size: gutter, sizes: theme.spacing })} / 2)`,
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: justify,
+    alignItems: align
+  }, getGutterStyles({ xs: gutterXs, sm: gutterSm, md: gutterMd, lg: gutterLg, xl: gutterXl }, theme))
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useStyles);
+//# sourceMappingURL=Grid.styles.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Image/Image.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Image/Image.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Image: () => (/* binding */ Image)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/MantineProvider.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/utils/rem/rem.js");
+/* harmony import */ var _mantine_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mantine/hooks */ "./node_modules/@mantine/hooks/esm/use-did-update/use-did-update.js");
+/* harmony import */ var _ImageIcon_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ImageIcon.js */ "./node_modules/@mantine/core/esm/Image/ImageIcon.js");
+/* harmony import */ var _Image_styles_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image.styles.js */ "./node_modules/@mantine/core/esm/Image/Image.styles.js");
+/* harmony import */ var _Box_Box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Box/Box.js */ "./node_modules/@mantine/core/esm/Box/Box.js");
+/* harmony import */ var _Text_Text_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Text/Text.js */ "./node_modules/@mantine/core/esm/Text/Text.js");
+
+
+
+
+
+
+
+
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {
+  fit: "cover",
+  width: "100%",
+  height: "auto",
+  radius: 0
+};
+const Image = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
+  const _a = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.useComponentDefaultProps)("Image", defaultProps, props), {
+    className,
+    alt,
+    src,
+    fit,
+    width,
+    height,
+    radius,
+    imageProps,
+    withPlaceholder,
+    placeholder,
+    imageRef,
+    classNames,
+    styles,
+    caption,
+    unstyled,
+    style,
+    variant
+  } = _a, others = __objRest(_a, [
+    "className",
+    "alt",
+    "src",
+    "fit",
+    "width",
+    "height",
+    "radius",
+    "imageProps",
+    "withPlaceholder",
+    "placeholder",
+    "imageRef",
+    "classNames",
+    "styles",
+    "caption",
+    "unstyled",
+    "style",
+    "variant"
+  ]);
+  const { classes, cx } = (0,_Image_styles_js__WEBPACK_IMPORTED_MODULE_2__["default"])({ radius }, { classNames, styles, unstyled, name: "Image", variant });
+  const [error, setError] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(!src);
+  const isPlaceholder = withPlaceholder && error;
+  (0,_mantine_hooks__WEBPACK_IMPORTED_MODULE_3__.useDidUpdate)(() => {
+    setError(!src);
+  }, [src]);
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Box_Box_js__WEBPACK_IMPORTED_MODULE_4__.Box, __spreadValues({
+    className: cx(classes.root, className),
+    style: __spreadValues({ width: (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.rem)(width) }, style),
+    ref
+  }, others), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", {
+    className: classes.figure
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: classes.imageWrapper
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", __spreadProps(__spreadValues({
+    src,
+    alt,
+    ref: imageRef
+  }, imageProps), {
+    className: cx(classes.image, imageProps == null ? void 0 : imageProps.className),
+    onError: (event) => {
+      setError(true);
+      typeof (imageProps == null ? void 0 : imageProps.onError) === "function" && imageProps.onError(event);
+    },
+    style: __spreadValues({ objectFit: fit, width: (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.rem)(width), height: (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.rem)(height) }, imageProps == null ? void 0 : imageProps.style)
+  })), isPlaceholder && /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: classes.placeholder,
+    title: alt
+  }, placeholder || /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ImageIcon_js__WEBPACK_IMPORTED_MODULE_6__.ImageIcon, {
+    width: (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.rem)(40),
+    height: (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.rem)(40)
+  })))), !!caption && /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Text_Text_js__WEBPACK_IMPORTED_MODULE_7__.Text, {
+    component: "figcaption",
+    size: "sm",
+    align: "center",
+    className: classes.caption
+  }, caption)));
+});
+Image.displayName = "@mantine/core/Image";
+
+
+//# sourceMappingURL=Image.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Image/Image.styles.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Image/Image.styles.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/tss/create-styles.js");
+
+
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var useStyles = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_0__.createStyles)((theme, { radius }) => ({
+  root: {},
+  imageWrapper: {
+    position: "relative"
+  },
+  figure: {
+    margin: 0
+  },
+  image: __spreadProps(__spreadValues({}, theme.fn.fontStyles()), {
+    display: "block",
+    width: "100%",
+    height: "100%",
+    border: 0,
+    borderRadius: theme.fn.radius(radius)
+  }),
+  caption: {
+    color: theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[7],
+    marginTop: theme.spacing.xs
+  },
+  placeholder: __spreadProps(__spreadValues({}, theme.fn.cover()), {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[6],
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
+    borderRadius: theme.fn.radius(radius)
+  })
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useStyles);
+//# sourceMappingURL=Image.styles.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Image/ImageIcon.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Image/ImageIcon.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ImageIcon: () => (/* binding */ ImageIcon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+function ImageIcon(props) {
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", __spreadValues({
+    viewBox: "0 0 15 15",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+    d: "M2.5 1H12.5C13.3284 1 14 1.67157 14 2.5V12.5C14 13.3284 13.3284 14 12.5 14H2.5C1.67157 14 1 13.3284 1 12.5V2.5C1 1.67157 1.67157 1 2.5 1ZM2.5 2C2.22386 2 2 2.22386 2 2.5V8.3636L3.6818 6.6818C3.76809 6.59551 3.88572 6.54797 4.00774 6.55007C4.12975 6.55216 4.24568 6.60372 4.32895 6.69293L7.87355 10.4901L10.6818 7.6818C10.8575 7.50607 11.1425 7.50607 11.3182 7.6818L13 9.3636V2.5C13 2.22386 12.7761 2 12.5 2H2.5ZM2 12.5V9.6364L3.98887 7.64753L7.5311 11.4421L8.94113 13H2.5C2.22386 13 2 12.7761 2 12.5ZM12.5 13H10.155L8.48336 11.153L11 8.6364L13 10.6364V12.5C13 12.7761 12.7761 13 12.5 13ZM6.64922 5.5C6.64922 5.03013 7.03013 4.64922 7.5 4.64922C7.96987 4.64922 8.35078 5.03013 8.35078 5.5C8.35078 5.96987 7.96987 6.35078 7.5 6.35078C7.03013 6.35078 6.64922 5.96987 6.64922 5.5ZM7.5 3.74922C6.53307 3.74922 5.74922 4.53307 5.74922 5.5C5.74922 6.46693 6.53307 7.25078 7.5 7.25078C8.46693 7.25078 9.25078 6.46693 9.25078 5.5C9.25078 4.53307 8.46693 3.74922 7.5 3.74922Z",
+    fill: "currentColor",
+    fillRule: "evenodd",
+    clipRule: "evenodd"
+  }));
+}
+
+
+//# sourceMappingURL=ImageIcon.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/@mantine/core/esm/Input/Input.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@mantine/core/esm/Input/Input.js ***!
@@ -17719,7 +18465,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Flex/Flex.js");
 /* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Grid/Grid.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Grid/Col/Col.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Image/Image.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
 /* harmony import */ var _tabler_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tabler/icons-react */ "./node_modules/@tabler/icons-react/dist/esm/icons/IconCertificate.js");
 /* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apexcharts */ "./node_modules/apexcharts/dist/apexcharts.common.js");
 /* harmony import */ var apexcharts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(apexcharts__WEBPACK_IMPORTED_MODULE_1__);
@@ -17772,7 +18521,7 @@ function Overview() {
         },
         series: [76, 67, 61],
         colors: ["#024368", "#0583D2", "#4FD6F7"],
-        labels: ["Complted", "In Progress", "Not Started"],
+        labels: ["Completed", "In Progress", "Not Started"],
         plotOptions: {
           radialBar: {
             offsetY: 0,
@@ -17780,7 +18529,7 @@ function Overview() {
             endAngle: 270,
             hollow: {
               margin: 5,
-              size: "50%",
+              size: "30%",
               background: "transparent",
               image: undefined
             },
@@ -17979,10 +18728,227 @@ function Overview() {
     style: {
       marginBottom: "40px"
     }
-  }, "Top Courses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+  }, "Top Courses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://cdn.mos.cms.futurecdn.net/Ks6KtG9fx9soz6ddidT9iY.jpg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px"
+  }, "Science"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "12px",
+    c: "#666666",
+    style: {
+      padding: "8px 11px",
+      backgroundColor: "#6666661A",
+      borderRadius: "32px"
+    }
+  }, "Free"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "flex-start",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Total Students:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#868E96"
+  }, "456"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px"
+  }, "Evolution of Everything in the History"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "12px",
+    c: "#666666",
+    style: {
+      padding: "8px 11px",
+      backgroundColor: "#6666661A",
+      borderRadius: "32px"
+    }
+  }, "Open"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "flex-start",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Total Students:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#868E96"
+  }, "22"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px"
+  }, "Human Computer Interactions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "12px",
+    c: "#666666",
+    style: {
+      padding: "8px 11px",
+      backgroundColor: "#6666661A",
+      borderRadius: "32px"
+    }
+  }, "$128"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "flex-start",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Total Students:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#868E96"
+  }, "325"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px"
+  }, "Computer Science"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "12px",
+    c: "#666666",
+    style: {
+      padding: "8px 11px",
+      backgroundColor: "#6666661A",
+      borderRadius: "32px"
+    }
+  }, "Free"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "flex-start",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Total Students:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#868E96"
+  }, "456"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
     ta: "center",
     c: "#2067FA",
-    size: "14px"
+    size: "14px",
+    style: {
+      marginTop: "19px"
+    }
   }, "View More"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
     justify: "space-between",
     align: "flex-start",
@@ -18002,7 +18968,7 @@ function Overview() {
     style: {
       marginBottom: "40px"
     }
-  }, "Course Report"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Select, {
+  }, "Course Report"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Select, {
     style: {
       fontSize: "14px"
     },
@@ -18042,7 +19008,207 @@ function Overview() {
     style: {
       marginBottom: "40px"
     }
-  }, "Latest Submissions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+  }, "Latest Submissions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2bNyuuj-5jvnxoBpEYs9YFSD6fT8CANrOKznFwZfaYsVmsz3HoJ3dV1ieQZeSWkR7gI&usqp=CAU",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px",
+    c: "#666666"
+  }, "Arnold"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#666666"
+  }, "Graded"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "The Evolution of the Human Race"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://st2.depositphotos.com/2931363/10135/i/600/depositphotos_101351750-stock-photo-man-in-glasses-with-digital.jpg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px",
+    c: "#666666"
+  }, "Danny Super"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#666666"
+  }, "Not Graded"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Human Computer Interactions (HCI)"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px",
+    c: "#666666"
+  }, "Rakesh Jalandar"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#666666"
+  }, "Not Graded"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Advanced User Experience Design"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "grid-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      alignItems: "center"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 2
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+    width: "58px",
+    height: "58px",
+    radius: "10px",
+    src: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg",
+    alt: "Science"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 10
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Grid, {
+    gutter: "lg",
+    style: {
+      height: "100%"
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "16px",
+    c: "#666666"
+  }, "Ram Charan"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 600,
+    size: "14px",
+    c: "#666666"
+  }, "Graded"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Col, {
+    span: 12
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+    justify: "space-between",
+    align: "center",
+    direction: "row"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Human Computer Interactions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Text, {
+    fw: 400,
+    size: "14px",
+    c: "#868E96"
+  }, "Essay"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
     justify: "space-between",
     align: "center",
     direction: "row"
