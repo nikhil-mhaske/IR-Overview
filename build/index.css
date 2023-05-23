@@ -6,5 +6,16 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-create-block-learndash-overview {
+  background-color: #fbfcff;
+  padding: 32px;
+  font-family: "Open Sans", sans-serif;
+}
+.wp-block-create-block-learndash-overview .overview {
+  width: calc(25% - 90px);
+}
+.wp-block-create-block-learndash-overview .block {
+  width: calc(50% - 83px);
+}
 
 /*# sourceMappingURL=index.css.map*/

@@ -8,9 +8,9 @@
 .wp-block-create-block-learndash-overview {
 	background-color: #fbfcff;
 	padding: 32px;
-	font-family: "Open Sans";
+	font-family: 'Open Sans', sans-serif;
 	.overview {
-		width: calc(25% - 32px);
+		width: calc(25% - 24px);
 		background: #ffffff;
 		border: 1px solid #d6d8e7;
 		border-radius: 10px;
@@ -18,7 +18,7 @@
 	}
 
 	.block {
-		width: calc(50% - 32px);
+		width: calc(50% - 16px);
 		background: #ffffff;
 		border: 1px solid #d6d8e7;
 		border-radius: 10px;
@@ -26,7 +26,7 @@
 		margin-top: 32px;
 
 		.area-chart {
-			margin-top: 40px;
+			margin-top: 20px;
 		}
 		.apexcharts-toolbar {
 			display: none;
@@ -38,6 +38,10 @@
 			width: 91px;
 		}
 
+		.mantine-Select-input{
+			line-height: 5px;
+			background: white;
+		}
 		.grid-block {
 			padding: 16px;
 			margin-bottom: 22px;

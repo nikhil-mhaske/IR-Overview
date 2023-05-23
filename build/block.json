@@ -35,6 +35,22 @@
           "icon": "Icon123"
         }
       ]
+    },
+    "showEarnings": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTopCourses": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLatestSubmissions": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCourseReports": {
+      "type": "boolean",
+      "default": true
     }
   },
   "textdomain": "learndash-overview",

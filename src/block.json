@@ -13,33 +13,47 @@
 
 	"attributes": {
 		"overview": {
-		  "type": "array",
-		  "default": [
-			{
-			  "name": "Course",
-			  "count": "10",
-			  "icon": "IconCertificate"
-			},
-			{
-			  "name": "Students",
-			  "count": "56",
-			  "icon": "IconSchool"
-			},
-			{
-			  "name": "Submissions",
-			  "count": "20",
-			  "icon": "IconSchool"
-			},
-			{
-			  "name": "Quiz Attempts",
-			  "count": "53",
-			  "icon": "Icon123"
-			}
-		  ]
+			"type": "array",
+			"default": [
+				{
+					"name": "Course",
+					"count": "10",
+					"icon": "IconCertificate"
+				},
+				{
+					"name": "Students",
+					"count": "56",
+					"icon": "IconSchool"
+				},
+				{
+					"name": "Submissions",
+					"count": "20",
+					"icon": "IconSchool"
+				},
+				{
+					"name": "Quiz Attempts",
+					"count": "53",
+					"icon": "Icon123"
+				}
+			]
+		},
+		"showEarnings": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTopCourses": {
+			"type": "boolean",
+			"default": true
+		},
+		"showLatestSubmissions": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCourseReports": {
+			"type": "boolean",
+			"default": true
 		}
-	  },
-	
-
+	},
 
 	"textdomain": "learndash-overview",
 	"editorScript": "file:./index.js",
