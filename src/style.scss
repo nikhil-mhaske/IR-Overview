@@ -8,13 +8,20 @@
 .wp-block-create-block-learndash-overview {
 	background-color: #fbfcff;
 	padding: 32px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	.overview {
 		width: calc(25% - 24px);
 		background: #ffffff;
 		border: 1px solid #d6d8e7;
 		border-radius: 10px;
 		padding: 20px 32px;
+	}
+
+	.user-info {
+		background: #ffffff;
+		border: 1px solid #d6d8e7;
+		border-radius: 10px;
+		padding: 12px 12px 12px 20px;
 	}
 
 	.block {
@@ -38,7 +45,7 @@
 			width: 91px;
 		}
 
-		.mantine-Select-input{
+		.mantine-Select-input {
 			line-height: 5px;
 			background: white;
 		}

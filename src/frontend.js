@@ -1,4 +1,4 @@
-import { Flex, Text, Select, Image, Grid, Col } from "@mantine/core";
+import { Flex, Text, Select, Image, Grid, Col, Group } from "@mantine/core";
 import {
 	IconBook,
 	IconBrowserCheck,
@@ -7,14 +7,15 @@ import {
 } from "@tabler/icons-react";
 import ApexCharts from "apexcharts";
 import { useEffect, useRef } from "react";
+import {attributes} from "./block.json";
 
-export default function Overview({ data }) {
+export default function Overview({data}) {
 	const {
 		showEarnings,
 		showTopCourses,
 		showCourseReports,
 		showLatestSubmissions,
-	} = data.attributes;
+	} = data;
 
 	const chartRef = useRef(null);
 	const circleChartRef = useRef(null);
@@ -31,15 +32,17 @@ export default function Overview({ data }) {
 				series: [
 					{
 						name: "Earnings",
-						data: [25, 51, 35, 50, 60, 75, 95],
+						data: [0, 25, 51, 35, 50, 60, 75, 95],
 					},
 				],
 				xaxis: {
-					categories: [10, 20, 30, 40, 50, 60, 70],
+					categories: [0, 10, 20, 30, 40, 50, 60, 70],
 					title: {
 						text: "Days",
 						style: {
-							colors: ["#ADB5BD"],
+							color: "#ADB5BD",
+							fontSize: "14px",
+							fontWeight: "600",
 						},
 					},
 				},
@@ -64,7 +67,7 @@ export default function Overview({ data }) {
 					type: "radialBar",
 				},
 				series: [76, 67, 61],
-				colors: ["#024368", "#0583D2", "#4FD6F7"],
+				colors: ["#0D2964", "#2067FA", "#79A4FC"],
 				labels: ["Completed", "In Progress", "Not Started"],
 				plotOptions: {
 					radialBar: {
@@ -126,6 +129,33 @@ export default function Overview({ data }) {
 
 	return (
 		<>
+			<Flex
+				justify="space-between"
+				align="flex-start"
+				direction="row"
+				style={{ marginBottom: "32px" }}
+			>
+				<Text fw={700} size="28px">
+					Overview
+				</Text>
+				<Group className="user-info">
+					<div>
+						<Text ta="right" size="16px" fw={600} c="#3C3C3E">
+							Alexa Domes
+						</Text>
+
+						<Text ta="right" fw={400} size="12px" c="#868E96">
+							Alexa.domes4356@gmail.com
+						</Text>
+					</div>
+					<Image
+						src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+						radius="56px"
+						width="48px"
+						height="48px"
+					/>
+				</Group>
+			</Flex>
 			{/* Top 4 Blocks */}
 			<Flex justify="space-between" align="flex-start" direction="row">
 				<div className="overview">
@@ -705,9 +735,10 @@ export default function Overview({ data }) {
 	);
 }
 
+
 document.addEventListener("DOMContentLoaded", function (event) {
 	let elem = document.getElementsByClassName("ir-overview-page");
 	if (elem.length > 0) {
-		ReactDOM.render(React.createElement(Overview), elem[0]);
+		ReactDOM.render(React.createElement(Overview, {data: attributes}), elem[0]);
 	}
 });

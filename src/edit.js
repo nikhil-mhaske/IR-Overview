@@ -10,10 +10,10 @@ export default function Edit(props) {
 	const blockProps = useBlockProps();
 	const {attributes, setAttributes} = props;
 	const {showEarnings, showTopCourses, showCourseReports, showLatestSubmissions } = attributes;
+	
 	const ManipulatedOverview = () => {
-		
 		return (
-			<Overview data={props} />
+			<Overview data={attributes} />
 		);
 	  };
 	  
@@ -21,7 +21,7 @@ export default function Edit(props) {
 		<div {...blockProps}>
 			<ManipulatedOverview />
 			<InspectorControls>
-				<PanelBody title={__("Display Options")} initialOpen={true}>
+				<PanelBody title={__("Cards Display Settings")} initialOpen={true}>
 					<ToggleControl
 						label={__("Earnings")}
 						checked={showEarnings}

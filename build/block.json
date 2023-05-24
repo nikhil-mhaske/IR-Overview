@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "title": "Learndash Overview",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "feedback",
+  "description": "Block to display the Instructor Role Overview",
   "supports": {
     "html": false
   },
