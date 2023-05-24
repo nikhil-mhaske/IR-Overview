@@ -168,7 +168,7 @@ export default function Overview({ data }) {
 				justify="space-between"
 				align="flex-start"
 				direction="row"
-				style={{ marginBottom: "32px" }}
+				style={{ margin: "16px" }}
 			>
 				<Text fw={700} size="28px">
 					Overview

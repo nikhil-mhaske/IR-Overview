@@ -23924,7 +23924,7 @@ function Overview(_ref) {
     align: "flex-start",
     direction: "row",
     style: {
-      marginBottom: "32px"
+      margin: "16px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_4__.Text, {
     fw: 700,

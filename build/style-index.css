@@ -9,14 +9,15 @@
  */
 .wp-block-create-block-learndash-overview {
   background-color: #fbfcff;
-  padding: 32px;
+  padding: 16px;
   font-family: "Open Sans", sans-serif;
 }
 .wp-block-create-block-learndash-overview .overview {
-  width: calc(25% - 24px);
+  width: 25%;
   background: #ffffff;
   border: 1px solid #d6d8e7;
   border-radius: 10px;
+  margin: 16px;
   padding: 20px 32px;
 }
 .wp-block-create-block-learndash-overview .user-info {
@@ -26,12 +27,12 @@
   padding: 12px 12px 12px 20px;
 }
 .wp-block-create-block-learndash-overview .block {
-  width: calc(50% - 16px);
+  width: calc(50% - 32px);
   background: #ffffff;
   border: 1px solid #d6d8e7;
   border-radius: 10px;
   padding: 24px 32px;
-  margin-top: 32px;
+  margin: 16px;
 }
 .wp-block-create-block-learndash-overview .block .grid-block:hover .hover-effect {
   color: #2067FA;
