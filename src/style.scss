@@ -32,6 +32,11 @@
 		padding: 24px 32px;
 		margin-top: 32px;
 
+		.grid-block:hover .hover-effect {
+			color: #2067FA; 
+			cursor: arrow;
+		  }
+		  
 		.area-chart {
 			margin-top: 20px;
 		}

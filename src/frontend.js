@@ -6,16 +6,51 @@ import {
 	IconUsers,
 } from "@tabler/icons-react";
 import ApexCharts from "apexcharts";
-import { useEffect, useRef } from "react";
-import {attributes} from "./block.json";
+import { useEffect, useRef, useState } from "react";
 
-export default function Overview({data}) {
-	const {
-		showEarnings,
-		showTopCourses,
-		showCourseReports,
-		showLatestSubmissions,
-	} = data;
+export default function Overview({ data }) {
+
+	const [showEarnings, setShowEarnings] = useState(data.showEarnings);
+	const [showTopCourses, setShowTopCourses] = useState(data.showTopCourses);
+	const [showCourseReports, setShowCourseReports] = useState(
+		data.showCourseReports
+	);
+	const [showLatestSubmissions, setShowLatestSubmissions] = useState(
+		data.showLatestSubmissions
+	);
+
+	useEffect(() => {
+		if (jQuery(".ir-overview-page").length) {
+			const __showEarnings =
+				document
+					.getElementsByClassName("ir-overview-page")[0]
+					.getAttribute("data-earnings") === "true"
+					? true
+					: false;
+			setShowEarnings(__showEarnings);
+			const __showTopCourses =
+				document
+					.getElementsByClassName("ir-overview-page")[0]
+					.getAttribute("data-courses") === "true"
+					? true
+					: false;
+			setShowTopCourses(__showTopCourses);
+			const __showCourseReports =
+				document
+					.getElementsByClassName("ir-overview-page")[0]
+					.getAttribute("data-reports") === "true"
+					? true
+					: false;
+			setShowCourseReports(__showCourseReports);
+			const __showLatestSubmissions =
+				document
+					.getElementsByClassName("ir-overview-page")[0]
+					.getAttribute("data-sub") === "true"
+					? true
+					: false;
+			setShowLatestSubmissions(__showLatestSubmissions);
+		}
+	}, []);
 
 	const chartRef = useRef(null);
 	const circleChartRef = useRef(null);
@@ -57,7 +92,7 @@ export default function Overview({data}) {
 			const chart = new ApexCharts(chartRef.current, options);
 			chart.render();
 		}
-	}, []);
+	}, [showEarnings]);
 
 	useEffect(() => {
 		if (circleChartRef.current) {
@@ -125,7 +160,7 @@ export default function Overview({data}) {
 			const chart = new ApexCharts(circleChartRef.current, options);
 			chart.render();
 		}
-	}, []);
+	}, [showCourseReports]);
 
 	return (
 		<>
@@ -304,7 +339,12 @@ export default function Overview({data}) {
 												align="center"
 												direction="row"
 											>
-												<Text fw={600} size="16px" c="#212529">
+												<Text
+													fw={600}
+													size="16px"
+													c="#212529"
+													className="hover-effect"
+												>
 													Science
 												</Text>
 												<Text
@@ -355,7 +395,7 @@ export default function Overview({data}) {
 												align="center"
 												direction="row"
 											>
-												<Text fw={600} size="16px">
+												<Text fw={600} size="16px" className="hover-effect">
 													Evolution of Everything in the History
 												</Text>
 												<Text
@@ -406,7 +446,7 @@ export default function Overview({data}) {
 												align="center"
 												direction="row"
 											>
-												<Text fw={600} size="16px">
+												<Text fw={600} size="16px" className="hover-effect">
 													Human Computer Interactions (HCI)
 												</Text>
 												<Text
@@ -457,7 +497,7 @@ export default function Overview({data}) {
 												align="center"
 												direction="row"
 											>
-												<Text fw={600} size="16px">
+												<Text fw={600} size="16px" className="hover-effect">
 													Computer Science
 												</Text>
 												<Text
@@ -739,6 +779,12 @@ export default function Overview({data}) {
 document.addEventListener("DOMContentLoaded", function (event) {
 	let elem = document.getElementsByClassName("ir-overview-page");
 	if (elem.length > 0) {
-		ReactDOM.render(React.createElement(Overview, {data: attributes}), elem[0]);
+		const data = {
+			showEarnings: true,
+			showTopCourses: true,
+			showCourseReports: true,
+			showLatestSubmissions: true,
+		};
+		ReactDOM.render(React.createElement(Overview, { data }), elem[0]);
 	}
 });

@@ -33,6 +33,10 @@
   padding: 24px 32px;
   margin-top: 32px;
 }
+.wp-block-create-block-learndash-overview .block .grid-block:hover .hover-effect {
+  color: #2067FA;
+  cursor: arrow;
+}
 .wp-block-create-block-learndash-overview .block .area-chart {
   margin-top: 20px;
 }
