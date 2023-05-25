@@ -10,6 +10,18 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Overview({ data }) {
 
+	
+	const [parentWidth, setParentWidth] = useState();
+
+	useEffect(() => {
+		const width = jQuery(".wp-block-create-block-learndash-overview").parent().width();
+		setParentWidth(width);
+	}, []);
+  
+	const isBelow767 = parentWidth <= 767;
+	const isBelow576 = parentWidth <= 576;
+	const rootClassName = `${isBelow767 ? "below-767 " : ""}${isBelow576 ? "below-576" : ""}`;
+
 	const [showEarnings, setShowEarnings] = useState(data.showEarnings);
 	const [showTopCourses, setShowTopCourses] = useState(data.showTopCourses);
 	const [showCourseReports, setShowCourseReports] = useState(
@@ -163,7 +175,7 @@ export default function Overview({ data }) {
 	}, [showCourseReports]);
 
 	return (
-		<>
+		<div className={rootClassName}>
 			<Flex
 				justify="space-between"
 				align="flex-start"
@@ -192,7 +204,7 @@ export default function Overview({ data }) {
 				</Group>
 			</Flex>
 			{/* Top 4 Blocks */}
-			<Flex justify="space-between" align="flex-start" direction="row">
+			<Flex justify="space-between" align="flex-start" direction="row" wrap="wrap">
 				<div className="overview">
 					<Flex align="center">
 						<IconBook
@@ -321,7 +333,7 @@ export default function Overview({ data }) {
 							Top Courses
 						</Text>
 						<div className="grid-block">
-							<Grid style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -331,7 +343,7 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
+								<Col span={9}>
 									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
@@ -377,7 +389,7 @@ export default function Overview({ data }) {
 						</div>
 
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -387,8 +399,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -396,7 +408,7 @@ export default function Overview({ data }) {
 												direction="row"
 											>
 												<Text fw={600} size="16px" className="hover-effect">
-													Evolution of Everything in the History
+													Evolution of Everything in...
 												</Text>
 												<Text
 													fw={600}
@@ -428,7 +440,7 @@ export default function Overview({ data }) {
 						</div>
 
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -438,8 +450,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -479,7 +491,7 @@ export default function Overview({ data }) {
 						</div>
 
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -489,8 +501,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -581,7 +593,7 @@ export default function Overview({ data }) {
 						</Text>
 
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -591,8 +603,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -626,7 +638,7 @@ export default function Overview({ data }) {
 							</Grid>
 						</div>
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -636,8 +648,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -671,7 +683,7 @@ export default function Overview({ data }) {
 							</Grid>
 						</div>
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -681,8 +693,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -716,7 +728,7 @@ export default function Overview({ data }) {
 							</Grid>
 						</div>
 						<div className="grid-block">
-							<Grid gutter="lg" style={{ alignItems: "center" }}>
+							<Grid style={{ alignItems: "center", gap: "8px"}}>
 								<Col span={2}>
 									<Image
 										width="58px"
@@ -726,8 +738,8 @@ export default function Overview({ data }) {
 										alt="Science"
 									/>
 								</Col>
-								<Col span={10}>
-									<Grid gutter="lg" style={{ height: "100%" }}>
+								<Col span={9}>
+									<Grid style={{ height: "100%" }}>
 										<Col span={12}>
 											<Flex
 												justify="space-between"
@@ -771,7 +783,7 @@ export default function Overview({ data }) {
 					</div>
 				)}
 			</Flex>
-		</>
+		</div>
 	);
 }
 

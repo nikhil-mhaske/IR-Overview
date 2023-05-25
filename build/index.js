@@ -18717,8 +18717,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _frontend_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./frontend.js */ "./src/frontend.js");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _frontend_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./frontend.js */ "./src/frontend.js");
+
 
 
 
@@ -18738,7 +18741,7 @@ function Edit(props) {
     showLatestSubmissions
   } = attributes;
   const ManipulatedOverview = () => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_frontend_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_frontend_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
       data: attributes
     });
   };
@@ -18811,6 +18814,14 @@ function Overview(_ref) {
   let {
     data
   } = _ref;
+  const [parentWidth, setParentWidth] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)();
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    const width = jQuery(".wp-block-create-block-learndash-overview").parent().width();
+    setParentWidth(width);
+  }, []);
+  const isBelow767 = parentWidth <= 767;
+  const isBelow576 = parentWidth <= 576;
+  const rootClassName = `${isBelow767 ? "below-767 " : ""}${isBelow576 ? "below-576" : ""}`;
   const [showEarnings, setShowEarnings] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(data.showEarnings);
   const [showTopCourses, setShowTopCourses] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(data.showTopCourses);
   const [showCourseReports, setShowCourseReports] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(data.showCourseReports);
@@ -18928,7 +18939,9 @@ function Overview(_ref) {
       chart.render();
     }
   }, [showCourseReports]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: rootClassName
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
     justify: "space-between",
     align: "flex-start",
     direction: "row",
@@ -18958,7 +18971,8 @@ function Overview(_ref) {
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
     justify: "space-between",
     align: "flex-start",
-    direction: "row"
+    direction: "row",
+    wrap: "wrap"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "overview"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_3__.Flex, {
@@ -19101,7 +19115,8 @@ function Overview(_ref) {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19112,7 +19127,7 @@ function Overview(_ref) {
     src: "https://cdn.mos.cms.futurecdn.net/Ks6KtG9fx9soz6ddidT9iY.jpg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
     style: {
       height: "100%"
@@ -19154,9 +19169,9 @@ function Overview(_ref) {
   }, "456"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19167,9 +19182,8 @@ function Overview(_ref) {
     src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19183,7 +19197,7 @@ function Overview(_ref) {
     fw: 600,
     size: "16px",
     className: "hover-effect"
-  }, "Evolution of Everything in the History"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_4__.Text, {
+  }, "Evolution of Everything in..."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_4__.Text, {
     fw: 600,
     size: "12px",
     c: "#666666",
@@ -19209,9 +19223,9 @@ function Overview(_ref) {
   }, "22"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19222,9 +19236,8 @@ function Overview(_ref) {
     src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19264,9 +19277,9 @@ function Overview(_ref) {
   }, "325"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19277,9 +19290,8 @@ function Overview(_ref) {
     src: "https://5.imimg.com/data5/TP/QU/QF/SELLER-32712236/gaming-pc-500x500.jpeg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19377,9 +19389,9 @@ function Overview(_ref) {
   }, "Latest Submissions"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19390,9 +19402,8 @@ function Overview(_ref) {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi2bNyuuj-5jvnxoBpEYs9YFSD6fT8CANrOKznFwZfaYsVmsz3HoJ3dV1ieQZeSWkR7gI&usqp=CAU",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19427,9 +19438,9 @@ function Overview(_ref) {
   }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19440,9 +19451,8 @@ function Overview(_ref) {
     src: "https://st2.depositphotos.com/2931363/10135/i/600/depositphotos_101351750-stock-photo-man-in-glasses-with-digital.jpg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19477,9 +19487,9 @@ function Overview(_ref) {
   }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19490,9 +19500,8 @@ function Overview(_ref) {
     src: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -19527,9 +19536,9 @@ function Overview(_ref) {
   }, "Assignment"))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "grid-block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
-      alignItems: "center"
+      alignItems: "center",
+      gap: "8px"
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
     span: 2
@@ -19540,9 +19549,8 @@ function Overview(_ref) {
     src: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg",
     alt: "Science"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Col, {
-    span: 10
+    span: 9
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
-    gutter: "lg",
     style: {
       height: "100%"
     }
@@ -21817,6 +21825,17 @@ module.exports = window["wp"]["blocks"];
 
 "use strict";
 module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["data"];
 
 /***/ }),
 
@@ -24766,7 +24785,7 @@ function combine (array, callback) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/learndash-overview","version":"0.1.0","title":"Learndash Overview","category":"widgets","icon":"feedback","description":"Block to display the Instructor Role Overview","supports":{"html":false},"attributes":{"overview":{"type":"array","default":[{"name":"Course","count":"10","icon":"IconCertificate"},{"name":"Students","count":"56","icon":"IconSchool"},{"name":"Submissions","count":"20","icon":"IconSchool"},{"name":"Quiz Attempts","count":"53","icon":"Icon123"}]},"showEarnings":{"type":"boolean","default":true},"showTopCourses":{"type":"boolean","default":true},"showLatestSubmissions":{"type":"boolean","default":true},"showCourseReports":{"type":"boolean","default":true}},"textdomain":"learndash-overview","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","script":"file:./frontend.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/learndash-overview","version":"0.1.0","title":"Learndash Overview","category":"widgets","icon":"feedback","description":"Block to display the Instructor Role Overview","supports":{"html":false},"attributes":{"showEarnings":{"type":"boolean","default":true},"showTopCourses":{"type":"boolean","default":true},"showLatestSubmissions":{"type":"boolean","default":true},"showCourseReports":{"type":"boolean","default":true}},"textdomain":"learndash-overview","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","script":"file:./frontend.js"}');
 
 /***/ })
 

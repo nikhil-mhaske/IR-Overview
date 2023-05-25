@@ -5,9 +5,17 @@
  */
 
  .wp-block-create-block-learndash-overview {
-	
+	.overview {
+		width: calc(25% - 98px);
+	}
 	.block {
 		width: calc(50% - 98px);
+	}
+
+	.below-767{
+		.overview{
+			width: calc(50% - 98px);
+		}
 	}
 }
 
